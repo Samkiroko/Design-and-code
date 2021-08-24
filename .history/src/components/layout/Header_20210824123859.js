@@ -6,7 +6,7 @@ import { menuData } from "../../data/menuData"
 const Header = () => {
   return (
     <Wrapper>
-      <img src="/images/logos/logo.svg" alt="logo" />
+      <img src="/images/logos/logo.svg" alt="" />
       <MenuWrapper>
         {menuData.map((item, index) => (
           <Link to={item.link} key={index}>
