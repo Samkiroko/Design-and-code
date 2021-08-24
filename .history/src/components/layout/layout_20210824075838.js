@@ -1,6 +1,5 @@
 import React from "react"
-import { GlobalStyle } from "../styles/GlobalStyles"
-
+import { GlobalStyle } from "../styles/GlobalStyle"
 import "./layout.css"
 
 function Layout({ children }) {
