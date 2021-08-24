@@ -36,18 +36,15 @@ const Wrapper = styled.div`
     }
     &.mockup2 {
       transition-delay: 0.2s;
-      transform: translate(0, -30px);
     }
     &.mockup3 {
       transition-delay: 0s;
     }
     &.mockup4 {
       transition-delay: 0.1s;
-      transform: translate(-120px, 30px);
     }
     &.mockup5 {
       transition-delay: 0.2s;
-      transform: translate(-90px, 30px);
     }
     :hover {
       filter: brightness(150%) saturate(120%);
