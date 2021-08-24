@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { menuData } from "../../data/menuData"
@@ -7,13 +6,10 @@ import MenuButton from "../buttons/MenuButton"
 const Header = () => {
   return (
     <Wrapper>
-      <Link to="/">
-        <img src="/images/logos/logo.svg" alt="logo" />
-      </Link>
-
+      <img src="/images/logos/logo.svg" alt="logo" />
       <MenuWrapper count={menuData.length}>
         {menuData.map((item, index) => (
-          <MenuButton item={item} key={index} />
+          <MenuButton />
         ))}
       </MenuWrapper>
     </Wrapper>
