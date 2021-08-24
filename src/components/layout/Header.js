@@ -1,11 +1,18 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { menuData } from "../../data/menuData"
 import MenuButton from "../buttons/MenuButton"
 import MenuTooltip from "../tooltips/MenuTooltip"
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleClick(event) {
+    event.preventDefault()
+    setIsOpen(!isOpen)
+  }
+
   return (
     <Wrapper>
       <Link to="/">
@@ -13,11 +20,19 @@ const Header = () => {
       </Link>
 
       <MenuWrapper count={menuData.length}>
-        {menuData.map((item, index) => (
-          <MenuButton item={item} key={index} />
-        ))}
+        {menuData.map((item, index) =>
+          item.link === "/account" ? (
+            <MenuButton
+              item={item}
+              key={index}
+              onClick={event => handleClick(event)}
+            />
+          ) : (
+            <MenuButton item={item} key={index} />
+          )
+        )}
       </MenuWrapper>
-      <MenuTooltip />
+      <MenuTooltip isOpen={isOpen} />
     </Wrapper>
   )
 }
